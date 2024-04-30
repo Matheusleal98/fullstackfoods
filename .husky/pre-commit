@@ -1,1 +1,1 @@
-npm eslint --fix /app
+npx lint-staged
