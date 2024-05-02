@@ -20,7 +20,7 @@ const RestaurantPage = async ({ params: { id } }: RestaurantPageProps) => {
     include: {
       categories: {
         include: {
-          Product: {
+          products: {
             where: {
               restaurantId: id,
             },
@@ -34,7 +34,7 @@ const RestaurantPage = async ({ params: { id } }: RestaurantPageProps) => {
           },
         },
       },
-      Product: {
+      products: {
         take: 10,
         include: {
           restaurant: {
@@ -93,13 +93,13 @@ const RestaurantPage = async ({ params: { id } }: RestaurantPageProps) => {
 
       <div className="mt-6 space-y-4">
         <h2 className="px-5 font-semibold">Mais Pedidos</h2>
-        <ProductList products={restaurant.Product} />
+        <ProductList products={restaurant.products} />
       </div>
 
       {restaurant.categories.map((category) => (
         <div className="mt-6 space-y-4" key={category.id}>
           <h2 className="px-5 font-semibold">{category.name}</h2>
-          <ProductList products={category.Product} />
+          <ProductList products={category.products} />
         </div>
       ))}
     </div>
