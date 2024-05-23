@@ -24,7 +24,7 @@ const RestaurantList = async () => {
           key={restaurant.id}
           restaurant={restaurant}
           userId={session?.user?.id}
-          userFavoriteRestaurant={userFavoriteRestaurants}
+          userFavoriteRestaurants={userFavoriteRestaurants}
         />
       ))}
     </div>
