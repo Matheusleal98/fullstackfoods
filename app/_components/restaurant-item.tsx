@@ -20,11 +20,11 @@ interface RestaurantItemProps {
 const RestaurantItem = ({
   restaurant,
   className,
-  userFavoriteRestaurants: userFavoriteRestaurant,
+  userFavoriteRestaurants,
 }: RestaurantItemProps) => {
-  console.log(userFavoriteRestaurant);
+  // console.log(userFavoriteRestaurants);
   const { data } = useSession();
-  const isFavorite = userFavoriteRestaurant.some(
+  const isFavorite = userFavoriteRestaurants.some(
     (fav) => fav.restaurantId === restaurant.id,
   );
 
