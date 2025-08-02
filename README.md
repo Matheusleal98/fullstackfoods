@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Full Stack FSW Foods
 
-## Getting Started
+FSW Foods é um projeto completo de e-commerce para restaurantes no estilo iFood, desenvolvido durante a Full Stack Week 4.0. Esta aplicação oferece um ecossistema completo para serviços de delivery, com integração entre frontend e backend, gerenciamento de estado e persistência de dados.
 
-First, run the development server:
+## Tecnologias
+### Stack Principal
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Frontend: Next.js 14 com App Router
+- Estilização: Tailwind CSS + Shadcn/ui
+- Linguagem: TypeScript
+- Backend: Server Actions integrado ao Next.js
+- Autenticação: Next-Auth com provedor Google
+
+### Banco de Dados
+
+- ORM: Prisma
+- Produção: PostgreSQL no Neon
+- Desenvolvimento: PostgreSQL em container Docker
+
+### Infraestrutura
+
+- Deploy: Vercel
+- Containerização: Docker para ambiente de desenvolvimento
+
+## Features Implementadas
+### Para Clientes
+- 🔍 Busca inteligente de restaurantes
+- 🛒 Sistema de carrinho com Context API
+- ❤️ Lista de favoritos por usuário
+- 📊 Sistema de avaliação de restaurantes
+- 📦 Histórico de pedidos com opção de "Refazer pedido"
+
+### Para Administração (Futuras implementações)
+- 📊 Dashboard analítico
+- 📦 Gestão de pedidos em tempo real
+- 💰 Controle financeiro
+- 🏬 Gerenciamento de múltiplos restaurantes
+
+## Ambiente de Desenvolvimento
+### Pré-requisitos
+
+- Node.js 18+
+- Docker e Docker Compose
+- Conta no Google Developers para OAuth
+
+## Configurações iniciais
+### Cloning the repository
+
+```shell
+https://github.com/Matheusleal98/fullstackfoods.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Install packages
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```shell
+npm i
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Setup .env file
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+```js
+DATABASE_URL=
+GOOGLE_CLIENT_ID =
+GOOGLE_CLIENT_SECRET =
+```
+### Setup Prisma ORM
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```shell
+npm run db:push
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```
 
-## Deploy on Vercel
+### Seed the app
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```shell
+npm run db:seed
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```
+
+
+### Start the app
+
+```shell
+npm run dev
+```
